@@ -11,15 +11,16 @@ public class AlfredQuotes {
 	}
 
 	public String dateAnnouncement() {
-		java.util.Date date = new Date();
-		return date.toString();
+		Date date = new Date();
+
+		return "It is currently "+date;
 	}
 
 	public String respondBeforeAlexis(String conversation) {
-		if(conversation.contains("Alexis!")){
-			return "Na bruh.";
+		if(conversation.contains("Alexis")){
+			return "I'll handle that right away sir. No idea where... the other one is at.";
 		} else if (conversation.contains("Alfred")) {
-			return "I believe Alexis may have something to do with this...";
+			return "At your service.";
 		}
 		return "A fine observation sir.";
 	}
