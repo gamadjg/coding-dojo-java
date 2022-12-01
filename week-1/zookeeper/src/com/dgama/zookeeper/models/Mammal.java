@@ -11,6 +11,11 @@ public class Mammal {
 		this.energyLevel = energyLevel;
 	}
 
+	public int displayEnergy(){
+		System.out.printf("Energy level: %d", energyLevel);
+		return this.energyLevel;
+	}
+
 	public int getEnergyLevel() {
 		return energyLevel;
 	}
