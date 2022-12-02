@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 public class Physician extends User implements HIPAACompliantUser {
 	private ArrayList<String> patientNotes;
-//	Constructor that takes an ID
+//	Constructor: ID
 	public Physician(Integer id){
 		super(id);
 	}
-//	Implementation of HIPAACompliantUser abstracts
+//	HIPAACompliantUser abstracts
 	public boolean assignPin(int pin){
 		if(String.valueOf(pin).length() == 4){
 			this.setPin(pin);
@@ -18,8 +18,8 @@ public class Physician extends User implements HIPAACompliantUser {
 	}
 
 	public boolean accessAuthorized(Integer confirmedAuthID){
-		if(this.getId())
-		return false;
+		System.out.printf("%d : %d", this.getId(), confirmedAuthID);
+		return this.getId().equals(confirmedAuthID);
 	}
 
 	public void newPatientNotes(String notes, String patientName, Date date) {
@@ -31,5 +31,10 @@ public class Physician extends User implements HIPAACompliantUser {
 	}
 
 //	Setters & Getters
-
+	public ArrayList<String> getPatientNotes() {
+		return patientNotes;
+	}
+	public void setPatientNotes(ArrayList<String> patientNotes) {
+		this.patientNotes = patientNotes;
+	}
 }
