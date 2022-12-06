@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.dgama</groupId>
-    <artifactId>testingGrounds</artifactId>
+    <artifactId>hoppersreceipt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>testingGrounds</name>
-    <description>testingGrounds</description>
+    <name>hoppers_receipt</name>
+    <description>hoppers_receipt</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -21,6 +21,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -32,16 +33,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--Jasper-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
-        <!--JSTL Tags-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
         </dependency>
     </dependencies>
 

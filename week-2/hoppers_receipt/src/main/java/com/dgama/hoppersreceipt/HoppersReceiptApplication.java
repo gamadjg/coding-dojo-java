@@ -1,13 +1,13 @@
-package com.dgama.testinggrounds;
+package com.dgama.hoppersreceipt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class TestingGroundsApplication {
+public class HoppersReceiptApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(TestingGroundsApplication.class, args);
+		SpringApplication.run(HoppersReceiptApplication.class, args);
 	}
 
 }
