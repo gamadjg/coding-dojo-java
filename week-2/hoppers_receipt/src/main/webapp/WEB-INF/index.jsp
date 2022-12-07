@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +7,10 @@
     <title>Hoppers Receipt</title>
 </head>
 <body>
+<%--    <c:forEach var="item" items="${receipt}" >--%>
+<%--        <p>${item.key}: ${item.value}</p>--%>
+<%--    </c:forEach>--%>
+
     <h1>Customer Name: <c:out value="${receipt['name']}" /></h1>
     <p>Item Name: <c:out value="${receipt['itemName']}"/></p>
     <p>Price: $<c:out value="${receipt['price']}"/></p>
