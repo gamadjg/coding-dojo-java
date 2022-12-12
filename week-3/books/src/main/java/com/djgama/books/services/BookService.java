@@ -32,8 +32,21 @@ public class BookService {
         return bookRepository.findAll();
     }
     
-    // Creates one item
+    // Create one item
     public Book create(Book b) {
         return bookRepository.save(b);
     }
+    
+    // Update item by id
+    public Book update(Long id, String title, String description, String language, Integer numberOfPages) {
+    	Book bookToUpdate = new Book(id, title, description, language, numberOfPages);
+    	return bookRepository.save(bookToUpdate);
+    }
+    
+    // Delete item by id
+    public void delete(Long id) {
+    	bookRepository.deleteById(id);
+    }
+    
+    
 }

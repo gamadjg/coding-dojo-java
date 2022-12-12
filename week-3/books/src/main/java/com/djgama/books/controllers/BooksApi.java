@@ -2,9 +2,11 @@ package com.djgama.books.controllers;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,20 +22,17 @@ public class BooksApi {
         this.bookService = bookService;
     }
     
-    // Get one
-    @GetMapping("/api/books/{id}")
-    public Book show(@PathVariable("id") Long id) {
-    	Book book = bookService.getOne(id);
-    	return book;
-    }
-    
-    
     // Get all
     @GetMapping("/api/books")
     public List<Book> index() {
-        return bookService.getAll();
+    	return bookService.getAll();
     }
     
+    // Get one
+    @GetMapping("/api/books/{id}")
+    public Book show(@PathVariable("id") Long id) {
+    	return bookService.getOne(id);
+    }
     
     // Create one
     @PostMapping("/api/books")
@@ -45,6 +44,24 @@ public class BooksApi {
     		) {
         Book book = new Book(title, description, lang, pages);
         return bookService.create(book);
+    }
+    
+    // Update one
+    @PutMapping("/api/books/{id}")
+    public Book update(
+    		@PathVariable("id") Long id, 
+    		@RequestParam("title") String title, 
+    		@RequestParam("description") String desc, 
+    		@RequestParam("language") String lang,
+    		@RequestParam("pages") Integer numOfPages) {
+        Book book = bookService.update(id, title, desc, lang, numOfPages);
+        return book;
+    }
+    
+    // Delete one
+    @DeleteMapping("/api/books/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        bookService.delete(id);
     }
     
 }

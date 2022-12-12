@@ -50,15 +50,30 @@ public class Book {
     public Book() {
     }
     
-    // Populated constructor
-    public Book(String title, String description, String lang, Integer pages) {
-        this.title = title;
-        this.description = description;
-        this.language = lang;
-        this.numberOfPages = pages;
+    // Create constructor
+    public Book(@NotNull @Size(min = 5, max = 200) String title, @NotNull @Size(min = 5, max = 200) String description,
+    		@NotNull @Size(min = 3, max = 40) String language, @NotNull @Min(100) Integer numberOfPages) {
+    	super();
+    	this.title = title;
+    	this.description = description;
+    	this.language = language;
+    	this.numberOfPages = numberOfPages;
     }
-    
-    public Long getId() {
+
+    // Update constructor
+    public Book(Long id, @NotNull @Size(min = 5, max = 200) String title,
+			@NotNull @Size(min = 5, max = 200) String description, @NotNull @Size(min = 3, max = 40) String language,
+			@NotNull @Min(100) Integer numberOfPages) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.language = language;
+		this.numberOfPages = numberOfPages;
+	}
+
+
+	public Long getId() {
 		return id;
 	}
 
