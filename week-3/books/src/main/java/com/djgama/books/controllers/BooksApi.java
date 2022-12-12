@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.djgama.books.models.Book;
 import com.djgama.books.services.BookService;
 
-
-
 @RestController
 public class BooksApi {
     private final BookService bookService;
