@@ -18,7 +18,7 @@ public class BooksController {
     }
     
     // Show all
-	@GetMapping("/all")
+	@GetMapping("")
 	public String index(Model model) {
 		model.addAttribute("books", bookService.getAll());
 		return "index.jsp";
