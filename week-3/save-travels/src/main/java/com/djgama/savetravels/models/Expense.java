@@ -24,18 +24,22 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotNull
-    @Size(min = 5, max = 200)
+    @NotNull (message = "Expense name cannot be empty")
+    @Size(min = 0, max = 200, message = "Expense name cannot be empty")
     private String name;
     
-    @NotNull
-    @Size(min = 5, max = 200)
+    @NotNull (message = "Vendor cannot be empty")
+    @Size(min = 0, max = 200, message = "Vendor cannot be empty")
     private String vendor;
     
     @NotNull (message = "Amount cannot be empty")
-    @Min(value = 10, message = "Number of pages cannot be under 10.")
+    @Min(value = 0, message = "Amount must be greater than zero")
     private Integer amount;
-    
+
+	@NotNull (message = "Description cannot be empty")
+    @Size(min = 0, max = 200, message = "Description cannot be empty")
+	private String description;
+
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
@@ -49,20 +53,22 @@ public class Expense {
     }
     
     // Creating constructor
-    public Expense(String name,String vendor, Integer amount) {
+    public Expense(String name,String vendor, Integer amount, String description) {
 		super();
 		this.name = name;
 		this.vendor = vendor;
 		this.amount = amount;
+		this.description = description;
 	}
 
 	// Updating constructor
-	public Expense(Long id,String name, String vendor, Integer amount) {
+	public Expense(Long id,String name, String vendor, Integer amount, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.vendor = vendor;
 		this.amount = amount;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -91,6 +97,14 @@ public class Expense {
 
 	public Integer getAmount() {
 		return amount;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public void setAmount(Integer amount) {

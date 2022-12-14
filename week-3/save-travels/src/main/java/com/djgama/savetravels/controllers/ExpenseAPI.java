@@ -29,9 +29,10 @@ public class ExpenseAPI {
 	public Expense create(
 			@RequestParam("name") String name,
 			@RequestParam("vendor") String vendor,
-			@RequestParam("amount") Integer amount
+			@RequestParam("amount") Integer amount,
+			@RequestParam("description") String description
 	) {
-		Expense expense = new Expense(name, vendor, amount);
+		Expense expense = new Expense(name, vendor, amount, description);
 		return expenseService.create(expense);
 	}
 
@@ -41,9 +42,11 @@ public class ExpenseAPI {
 			@PathVariable("id") Long id,
 			@RequestParam("name") String name,
 			@RequestParam("vendor") String vendor,
-			@RequestParam("amount") Integer amount
+			@RequestParam("amount") Integer amount,
+			@RequestParam("description") String description
+
 	){
-		Expense expense = new Expense(id, name, vendor, amount);
+		Expense expense = new Expense(id, name, vendor, amount, description);
 		return expenseService.update(expense);
 	}
 
