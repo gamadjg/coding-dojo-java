@@ -18,7 +18,7 @@ public class Ninja {
 
 	@NotNull (message = "Firstname cannot be empty")
 	@Size(min = 0, max = 200, message = "Firstname cannot be empty")
-	private String firstNname;
+	private String firstName;
 
 
 	@NotNull (message = "Lastname cannot be empty")
@@ -45,20 +45,18 @@ public class Ninja {
 	}
 
 //	Create Constructor
-	public Ninja(String firstNname, String lastName, Integer age, Dojo dojo) {
-		this.firstNname = firstNname;
+	public Ninja(String firstName, String lastName, Integer age) {
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.dojo = dojo;
 	}
 
 //	Update Constructor
-	public Ninja(Long id, String firstNname, String lastName, Integer age, Dojo dojo) {
+	public Ninja(Long id, String firstName, String lastName, Integer age) {
 		this.id = id;
-		this.firstNname = firstNname;
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.dojo = dojo;
 	}
 
 	//	Getters & Setters
@@ -70,12 +68,12 @@ public class Ninja {
 		this.id = id;
 	}
 
-	public String getFirstNname() {
-		return firstNname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstNname(String firstNname) {
-		this.firstNname = firstNname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
